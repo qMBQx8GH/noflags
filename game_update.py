@@ -2,7 +2,6 @@
 
 import os
 import json
-import requests
 import subprocess
 import xml.etree.ElementTree as ET
 import configparser
@@ -14,7 +13,6 @@ path_to_game = config['Game']['folder']
 xml_root = ET.parse(os.path.join(path_to_game, 'game_info.xml'))
 xml_version = xml_root.findall("//version[@name='client']")
 version = xml_version[0].attrib['installed']
-
 
 content = [
     'content/gameplay/common/flags/*.*',

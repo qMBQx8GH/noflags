@@ -11,17 +11,9 @@ def main():
 
     flags = os.listdir(source_dir)
     for filename in flags:
-        source_image = os.path.join(source_dir, filename)
+        print(filename)
         target_image = os.path.join(target_dir, filename)
-
-        flag = Image.open(source_image).convert('RGBA')
-        print(source_image, flag.size)
-
-        draw = ImageDraw.Draw(flag)
-        draw.rectangle([(0,0), flag.size], fill = (0,0,0,0) )
-
-        if os.path.exists(target_image):
-            os.unlink(target_image)
+        flag = Image.new('RGBA', (4, 4), (0, 0, 0, 0))
         flag.save(target_image, "DDS")
 
 

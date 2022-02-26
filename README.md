@@ -1,6 +1,6 @@
 # noflags
 
-1. Требуется python 3.X и 7zip
+1. Требуется python 3.X, git и 7zip
 2. Склонировать репозиторий
 ```git clone https://github.com/qMBQx8GH/noflags```
 3. Перейти в папку noflags

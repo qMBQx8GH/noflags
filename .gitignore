@@ -1,6 +1,4 @@
-res/
 tmp/
-dist/
 .vscode/
 build-wg.ini
 build-lst.ini

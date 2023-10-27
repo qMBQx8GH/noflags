@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 import json
 import subprocess
 import xml.etree.ElementTree as ET
 import configparser
 
 config = configparser.ConfigParser()
-config.read('build.ini')
+config.read(sys.argv[1])
 path_to_game = config['Game']['folder']
 
 xml_root = ET.parse(os.path.join(path_to_game, 'game_info.xml'))

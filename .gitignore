@@ -1,4 +1,5 @@
-.idea/
 res/
 tmp/
 dist/
+.vscode/
+build.ini

@@ -12,7 +12,7 @@ A modification of the World of Warships game to hide flags.
 - As a rule, the actual version is the largest number.
 - Go to it and open the res_mods folder with it.
 - It should look something like D:\Games\World_of_Warships\bin\6775398\res_mods
-- Here in this folder and unpack the archive (if you are prompted to replace the files, then agree).
+- Here in this folder unpack the archive (if you are prompted to replace the files, then agree).
 
 # Build yourself
 

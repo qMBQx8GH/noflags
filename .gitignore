@@ -1,4 +1,3 @@
-tmp/
 .vscode/
-build-wg.ini
-build-lst.ini
+tmp/
+*.ini

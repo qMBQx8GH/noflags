@@ -1,5 +1,5 @@
 [Game]
-folder=D:\Games\World_of_Warships_RU
+folder=C:\Games\World_of_Warships
 [Destination]
-folder=D:\owncloud\wows\noflags
-suffix=tst
+folder=tmp
+suffix=mk

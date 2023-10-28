@@ -1,17 +1,13 @@
 # noflags
 
-1. Требуется python 3.X, git и 7zip
-2. Склонировать репозиторий
+1. Install python 3.X, git
+2. Clone the repository
 ```git clone https://github.com/qMBQx8GH/noflags```
-3. Перейти в папку noflags
+3. Change directory to noflags
 ```cd noflags```
-4. Установить зависимости
+4. Install required packages
 ```python -m pip install -r requirements.txt```
-5. Скопировать и настроить build.ini
+5. Copy and edit build.ini.dist
 ```cp build.ini.dist build.ini```
-6. Скопировать файлы из ресурсов игры
-```python game_update.py```
-7. Создать модифицированные файлы
-```python make_flags.py```
-8. Создать архив с модом для распаковки в папке с игрой
-```build.cmd```
+6. Create an archive to unpack into bin\NNNNNNNN\res_mods folder in the game.
+```python game_update.py build.ini```

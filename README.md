@@ -8,7 +8,7 @@ A modification of the World of Warships game to hide flags.
 
 - Download .zip archive from the [Releases page](https://github.com/qMBQx8GH/noflags/releases).
 - Open the folder with the game, find the bin folder in it and go to it.
-= It will contain folders with numerical names - these are versions of the game.
+- It will contain folders with numerical names - these are versions of the game.
 - As a rule, the actual version is the largest number.
 - Go to it and open the res_mods folder with it.
 - It should look something like D:\Games\World_of_Warships\bin\6775398\res_mods

@@ -29,10 +29,12 @@ files = glob.glob(os.path.join(tmp_dir, '*'))
 for f in files:
     os.remove(f)
 
+# Create empty dds image
 empty_image = os.path.join(tmp_dir, 'empty.dds')
 flag = Image.new('RGBA', (4, 4), (0, 0, 0, 0))
 flag.save(empty_image, "DDS")
 
+# List game flags files list
 output = subprocess.check_output([
         'wowsunpack.exe',
         '-l', os.path.join(path_to_game, "bin", version.split(".")[-1], "idx"),
@@ -41,7 +43,8 @@ output = subprocess.check_output([
     ],
 ).decode()
 
-c = 0;
+# Pack archive
+c = 0
 zip_archive = os.path.join(tmp_dir, 'flags.zip')
 with zipfile.ZipFile(zip_archive, 'w', zipfile.ZIP_DEFLATED) as zipf:
     for line in output.split("\n"):
@@ -50,6 +53,7 @@ with zipfile.ZipFile(zip_archive, 'w', zipfile.ZIP_DEFLATED) as zipf:
             zipf.write(empty_image, line)
             c = c + 1
 
+# Copy archive
 target_dir = config['Destination']['folder']
 suffix = config['Destination']['suffix']
 target_file = 'noflags-' + version + '-' + suffix + '.zip'

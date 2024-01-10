@@ -43,9 +43,15 @@ output = subprocess.check_output([
     ],
 ).decode()
 
+# Archive name
+target_dir = config['Destination']['folder']
+suffix = config['Destination']['suffix']
+target_file = 'noflags-' + version + '-' + suffix + '.zip'
+zip_archive = os.path.join(target_dir, target_file)
+print(zip_archive)
+
 # Pack archive
 c = 0
-zip_archive = os.path.join(tmp_dir, 'flags.zip')
 with zipfile.ZipFile(zip_archive, 'w', zipfile.ZIP_DEFLATED) as zipf:
     for line in output.split("\n"):
         line = line.rstrip()
@@ -53,10 +59,4 @@ with zipfile.ZipFile(zip_archive, 'w', zipfile.ZIP_DEFLATED) as zipf:
             zipf.write(empty_image, line)
             c = c + 1
 
-# Copy archive
-target_dir = config['Destination']['folder']
-suffix = config['Destination']['suffix']
-target_file = 'noflags-' + version + '-' + suffix + '.zip'
-target = os.path.join(target_dir, target_file)
-print(target, c)
-shutil.copy2(zip_archive, target)
+print(c)

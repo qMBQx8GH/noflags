@@ -1,5 +1,5 @@
 [Game]
 folder=C:\Games\World_of_Warships
 [Destination]
-folder=tmp
-suffix=mk
+folder=dist
+suffix=ww

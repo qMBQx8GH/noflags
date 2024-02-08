@@ -21,7 +21,7 @@ version = xml_version[0].attrib['installed']
 print(version)
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
-tmp_dir = os.path.join(base_dir, 'tmp')
+tmp_dir = os.path.join(base_dir, 'dist')
 os.makedirs(tmp_dir, exist_ok=True)
 
 # Clean up tmp folder
@@ -60,3 +60,4 @@ with zipfile.ZipFile(zip_archive, 'w', zipfile.ZIP_DEFLATED) as zipf:
             c = c + 1
 
 print(c)
+os.unlink(empty_image)

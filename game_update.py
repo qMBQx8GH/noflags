@@ -36,7 +36,7 @@ flag.save(empty_image, "DDS")
 
 # List game flags files list
 output = subprocess.check_output([
-        'wowsunpack.exe',
+        'pfsunpack.exe',
         '-l', os.path.join(path_to_game, "bin", version.split(".")[-1], "idx"),
         '-I', 'content/gameplay/common/flags/*.*',
         '-p', '..\\..\\..\\res_packages',

@@ -45,19 +45,29 @@ output = subprocess.check_output([
 
 # Archive name
 target_dir = config['Destination']['folder']
-suffix = config['Destination']['suffix']
-target_file = 'noflags-' + version + '-' + suffix + '.zip'
+target_file = 'noflags-' + version + '.mkmod'
 zip_archive = os.path.join(target_dir, target_file)
 print(zip_archive)
 
+meta = """<meta.xml>
+    <meta>
+        <id>noflags</id>
+        <version>""" + version + """</version>
+        <name>Без флагов и флажков</name>
+        <description>Скрывает отображение флагов и сигнальных флажков и в порту и в бою.</description>
+    </meta>
+</meta.xml>
+"""
+
 # Pack archive
 c = 0
-with zipfile.ZipFile(zip_archive, 'w', zipfile.ZIP_DEFLATED) as zipf:
+with zipfile.ZipFile(zip_archive, 'w', zipfile.ZIP_STORED) as zipf:
     for line in output.split("\n"):
         line = line.rstrip()
         if line.count('/') == 4:
             zipf.write(empty_image, line)
             c = c + 1
+    zipf.writestr('meta.xml', meta)
 
 print(c)
 os.unlink(empty_image)

@@ -23,8 +23,8 @@
 ```git clone https://github.com/qMBQx8GH/noflags```
 1. Смените директорию на noflags
 ```cd noflags```
-1. Переключитесь на ветку mk
-```git checkout mk```
+1. Переключитесь на ветку mkmod
+```git checkout mkmod```
 1. Установите требуемые пакеты python
 ```python -m pip install -r requirements.txt```
 1. Скопируйте и отредактируйте build.ini.dist
